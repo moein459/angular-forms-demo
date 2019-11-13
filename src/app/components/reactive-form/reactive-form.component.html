@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+      <h5>Template Driven Form</h5>
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-md-12">
+          <form [formGroup]="loginForm" (submit)="submit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" formControlName="username" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="text" formControlName="password" class="form-control">
+            </div>
+            <div formGroupName="captcha">
+              <div class="form-group">
+                <label for="code">Captcha</label>
+                <input type="text" formControlName="code" class="form-control" id="code">
+              </div>
+            </div>
+            <button type="reset" class="btn btn-light mr-1">Reset</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{loginForm.value | json}}
